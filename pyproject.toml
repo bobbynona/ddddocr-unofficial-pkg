@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ddddocr-unofficial"
+version = "1.6.0"
+description = "Unofficial PyPI release of ddddocr v1.6.0. This package provides an up-to-date, installable version of the original work by sml2h3."
+readme = "README.md"
+authors = [
+    {name = "sml2h3 (Original Author)"},
+]
+license = { file = "ddddocr/LICENSE" }
+requires-python = "<=3.13"
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+keywords = ["ocr", "ddddocr", "captcha"]
+dependencies = [
+    "numpy",
+    "onnxruntime",
+    "Pillow",
+    "opencv-python-headless",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/sml2h3/ddddocr"
+"Repository" = "https://github.com/sml2h3/ddddocr"
+"Bug Tracker" = "https://github.com/sml2h3/ddddocr/issues"
+
+[project.scripts]
+ddddocr = "ddddocr.__main__:main"
+
+[project.optional-dependencies]
+api = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "pydantic>=2.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "ddddocr"}
+packages = ["ddddocr"]
